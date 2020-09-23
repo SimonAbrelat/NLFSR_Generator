@@ -1,4 +1,4 @@
-from BitVector import *
+from BitVector import BitVector
 from random import randrange, randint, sample
 class BitFunction:
     def __init__(self, fn):
@@ -10,6 +10,8 @@ class BitFunction:
 
     def __setitem__(self, idx, val): self.fn[idx] = val
 
+    def __len__(self): return len(self.fn)
+    
     def __str__(self):
         outstr = ""
         for i in range(len(self.fn)-1,-1,-1):
