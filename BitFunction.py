@@ -11,7 +11,7 @@ class BitFunction:
     def __setitem__(self, idx, val): self.fn[idx] = val
 
     def __len__(self): return len(self.fn)
-    
+
     def __str__(self):
         outstr = ""
         for i in range(len(self.fn)-1,-1,-1):
@@ -55,7 +55,7 @@ class BitFunction:
         minDest = maxDest = 0
         while not (minDest < maxDest):
             numTaps = randint(2,maxAnds)
-            newTerm = sample(range(1, self.size), numTaps)#[randrange(1,self.size) for _ in range(numTaps)]
+            newTerm = sample(range(1, self.size), numTaps)
             maxDest = self.getMaxDestination(newTerm)
             minDest = self.getMinDestination(newTerm)
 
