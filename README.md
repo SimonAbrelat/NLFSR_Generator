@@ -6,7 +6,7 @@ These files implement the concepts outlined in Elena Dubrova's [A Scalable Metho
 
 ## Files
 
-BitFunction.py: This file contains the BitFunction class, which is designed to interact with the NLFSR class. The Class contains a method for converting hexCodes associated with primitive polynomials in GF(2<sup>n</sup>) to their respective LFSR bit functions. As well as a function for converting an LFSR to a random NLFSR.
+BitFunction.py: This file contains the BitFunction class, which is designed to interact with the NLFSR class. The Class contains a method for converting [hexCodes](http://users.ece.cmu.edu/~koopman/lfsr/index.html) associated with primitive polynomials in GF(2) to their respective LFSR bit functions. As well as a function for converting an LFSR to a random NLFSR.
 
 The BitFunction may be printed to show a representation of each bit's update function, of the form x<sub>i+1</sub> + g<sub>i</sub>(x<sub>0</sub>, ..x<sub>n-1</sub>), with grouped terms being products (AND) and '+' separated terms being a sum (XOR).
 
