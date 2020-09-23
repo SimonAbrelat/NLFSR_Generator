@@ -2,7 +2,7 @@ from BitVector import BitVector
 from itertools import islice
 from BitFunction import BitFunction
 
-class NLMISR:
+class NLFSR:
     def __init__(self, seed, fn):
         self.fn = fn
         self.size = len(fn)
