@@ -12,13 +12,13 @@ class NLFSR:
             self.bits = BitVector(intVal = seed, size = self.size)
 
     def __iter__(self): return self
-    
+
     def __str__(self): return self.bits.__str__()
 
     def int_val(self): return int(self.bits)
 
     def reverse(self, bitIdx): return (self.size-1-bitIdx % self.size)
-    
+
     def __next__(self):
         nextState = BitVector(intVal = 0, size = self.size)
 
@@ -34,6 +34,11 @@ class NLFSR:
                 summation ^=  product
 
             nextState[(self.reverse(bitIdx))] = summation
-        
+
         self.bits = nextState
         return self.bits
+
+seed = 13
+example = NLFSR(seed, BitFunction.fromLFSR("80000000000019A9", 64)) 
+example.fn.generateNLFSR(5, .8)
+print(repr(example.fn))

@@ -19,7 +19,19 @@ class BitFunction:
                 + ": " + str((i + 1) % self.size) + " + ("
                 + (" + ".join([str(term) for term in self.fn[i]])) + ")\n")
         return outstr
-    
+    def __repr__(self):
+        outstr = ""
+        for i in range(len(self.fn)-1,-1,-1):
+            outstr += (str(i)
+                + "=" + str((i + 1) % self.size))
+            for term in self.fn[i]:
+                if len(term) == 1:
+                    outstr += "," + str(term[0])
+                else:
+                    outstr += ",(" + ",".join(str(t) for t in term) + ")"
+            outstr += ";\n"
+        return outstr
+
     @classmethod
     def fromLFSR(self,hexStr, size):
         taps = list(BitVector(intVal = int(hexStr, 16), size = size))
